@@ -1,6 +1,28 @@
 #ifndef SORTINGANDSEARCHING_H_INCLUDED
 #define SORTINGANDSEARCHING_H_INCLUDED
 
+/*
+* This header file contains the implementation of various sorting and searching algorithms.
+* The algorithms are implemented using pointers to access array elements.
+* This is done to demonstrate pointer arithmetic and dereferencing in C++.
+*/
+
+/*
+* The following searching algorithms are implemented:
+* 1. Linear Search
+* 2. Binary Search
+*/
+
+/*
+* Linear Search: This function searches for a given value in an array using the linear search algorithm.
+* It returns the index of the value if found, otherwise returns -1.
+* Parameters:
+* - arr: Pointer to the array to be searched.
+* - v: The value to be searched.
+* - length: The length of the array.
+*/
+
+
 int LinearSearch(int *arr, int v, int length){
     int index=-1;
     for(int i=0; i<length;i++){
@@ -8,6 +30,15 @@ int LinearSearch(int *arr, int v, int length){
     }
     return index;
 }
+
+/*
+* Binary Search: This function searches for a given value in a sorted array using the binary search algorithm.
+* It returns the index of the value if found, otherwise returns -1.
+* Parameters:
+* - arr: Pointer to the sorted array to be searched.
+* - v: The value to be searched.
+* - length: The length of the array.
+*/
 
 int binarySearch(int *arr, int v, int length){
     int first = 0, last = length - 1 , index = -1;
@@ -28,7 +59,26 @@ int binarySearch(int *arr, int v, int length){
     return index;
 }
 
-int selectionSorting(int *arr, int length){
+/*
+ * The following sorting algorithms are implemented:
+ * 1. Selection Sort
+ * 2. Bubble Sort
+ * 3. Insertion Sort
+ */
+
+/*
+ * Note: The sorting algorithms are implemented using pointers to access array elements.
+* This is done to demonstrate pointer arithmetic and dereferencing in C++.
+*/
+
+/*
+* Selection Sort: This function sorts an array using the selection sort algorithm.
+* Parameters:
+* - arr: Pointer to the array to be sorted.
+* - length: The length of the array.
+*/
+
+void selectionSorting(int *arr, int length){
     int i,j,k, temp;
     for (i = 0; i < length-1; i++){
         k = i;
@@ -46,8 +96,14 @@ int selectionSorting(int *arr, int length){
     }
 }
 
+/*
+* Bubble Sort: This function sorts an array using the bubble sort algorithm.
+* Parameters:
+* - arr: Pointer to the array to be sorted.
+* - length: The length of the array.
+*/
 
-int bubbleSorting(int *arr, int length){
+void bubbleSorting(int *arr, int length){
     int temp,i,j;
     for ( i = 0; i < length-1; i++){
         for ( j = 0; j < length-i-1; j++){
@@ -59,6 +115,13 @@ int bubbleSorting(int *arr, int length){
         }
     }
 }
+
+/*
+* Insertion Sort: This function sorts an array using the insertion sort algorithm.
+* Parameters:
+* - arr: Pointer to the array to be sorted.
+* - length: The length of the array.
+*/
 
 void insertionSort(int *arr, int length){
     int i,j,k;
